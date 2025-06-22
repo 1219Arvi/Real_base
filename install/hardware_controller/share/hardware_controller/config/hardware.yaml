@@ -1,0 +1,6 @@
+hardware:
+  plugin: "hardware_controller/HardwareController"
+  hardware_parameters:
+    port: "/dev/ttyUSB0"
+    baudrate: "115200"
+    num_wheels: "2"

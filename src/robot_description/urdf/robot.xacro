@@ -1,0 +1,393 @@
+<?xml version="1.0" ?>
+<robot name="robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find robot_description)/urdf/robot.trans" />
+<xacro:include filename="$(find robot_description)/urdf/robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.008818686971159602 -0.014397245080040028 0.30864055465963175" rpy="0 0 0"/>
+    <mass value="3.7819615734159022"/>
+    <inertia ixx="0.408975" iyy="0.403097" izz="0.070024" ixy="0.000186" iyz="0.026021" ixz="-0.001099"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="left_wheel_link_2">
+  <inertial>
+    <origin xyz="0.0004044659102567551 0.01599521235557283 3.414141627883227e-07" rpy="0 0 0"/>
+    <mass value="0.41626102660064224"/>
+    <inertia ixx="0.000442" iyy="0.000813" izz="0.000442" ixy="9e-06" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0074 -0.134581 -0.062625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/left_wheel_link_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0074 -0.134581 -0.062625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/left_wheel_link_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="right_wheel_link_1">
+  <inertial>
+    <origin xyz="5.887709386826617e-06 -0.01599979280325428 3.4141424240519136e-07" rpy="0 0 0"/>
+    <mass value="0.41626102660064224"/>
+    <inertia ixx="0.000442" iyy="0.000813" izz="0.000442" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.010756 0.134446 -0.062625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.010756 0.134446 -0.062625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/right_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camera_mount_link_1">
+  <inertial>
+    <origin xyz="0.04206860670983411 0.005537273638627808 0.02828214954932806" rpy="0 0 0"/>
+    <mass value="0.04598593540117349"/>
+    <inertia ixx="1.6e-05" iyy="1.6e-05" izz="1.3e-05" ixy="-1e-06" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.001158 0.011992 -0.863809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/camera_mount_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.001158 0.011992 -0.863809" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/camera_mount_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="vision_module_link_1">
+  <inertial>
+    <origin xyz="0.012630200025580192 -0.0255280951968587 0.03589133223318708" rpy="0 0 0"/>
+    <mass value="0.017455574975837183"/>
+    <inertia ixx="1.2e-05" iyy="7e-06" izz="9e-06" ixy="0.0" iyz="0.0" ixz="-2e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.048156 -0.019845 -0.901897" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/vision_module_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.048156 -0.019845 -0.901897" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/vision_module_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="realsense_link">
+  <inertial>
+    <origin xyz="0.011657410142899255 -0.0011559566930996867 0.0010283014584634431" rpy="0 0 0"/>
+    <mass value="0.03866336197375993"/>
+    <inertia ixx="2.5e-05" iyy="4e-06" izz="2.5e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.073593 0.005001 -0.950168" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.073593 0.005001 -0.950168" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/realsense_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor2_wheel_link_1">
+  <inertial>
+    <origin xyz="-2.7765768996046436e-05 -0.007500186231998884 2.780251692341418e-07" rpy="0 0 0"/>
+    <mass value="0.008745712385534371"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.167245 0.171855 -0.016186" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor2_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.167245 0.171855 -0.016186" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor2_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor2_link_1">
+  <inertial>
+    <origin xyz="0.003516920306617821 -0.0005065823270779812 -0.005952028114260963" rpy="0 0 0"/>
+    <mass value="0.002215422344468901"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.181264 0.178803 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.181264 0.178803 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor2_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor1_wheel_link_1">
+  <inertial>
+    <origin xyz="0.0001186002369346073 0.0074990583088189455 2.7802536406093536e-07" rpy="0 0 0"/>
+    <mass value="0.00874571238559159"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.144451 0.191036 -0.01597" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor1_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.144451 0.191036 -0.01597" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor1_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor1_link_1">
+  <inertial>
+    <origin xyz="-0.003358398581431443 0.0005470762693611797 -0.00616802811427964" rpy="0 0 0"/>
+    <mass value="0.0058520590231254"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.158401 0.184256 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor1_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.158401 0.184256 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor1_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor4_wheel_link_1">
+  <inertial>
+    <origin xyz="-2.7885297346708082e-05 -0.007500151699322638 4.780253358600828e-07" rpy="0 0 0"/>
+    <mass value="0.008745712385538338"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.191077 -0.190841 -0.015697" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor4_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.191077 -0.190841 -0.015697" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor4_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor4_link_1">
+  <inertial>
+    <origin xyz="-0.003460571373861243 -0.000493755604240087 -0.006440828114108184" rpy="0 0 0"/>
+    <mass value="0.0058520590231254"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.17717 -0.183789 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor4_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.17717 -0.183789 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor4_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor3_wheel_link_1">
+  <inertial>
+    <origin xyz="-2.8571723080766942e-05 -0.0074996766153433425 -2.197468448872364e-08" rpy="0 0 0"/>
+    <mass value="0.008745712385538335"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.146216 -0.185648 -0.015884" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor3_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.146216 -0.185648 -0.015884" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor3_wheel_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="castor3_link_1">
+  <inertial>
+    <origin xyz="-0.003485257799595687 -0.0004942805202605982 -0.0062543281141285365" rpy="0 0 0"/>
+    <mass value="0.0058520590231254"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.160147 -0.178597 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor3_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.160147 -0.178597 -0.037117" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find robot_description)/meshes/castor3_link_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="left_wheel_joint" type="continuous">
+  <origin xyz="-0.0074 0.134581 0.062625" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="left_wheel_link_2"/>
+  <axis xyz="0.025282 0.99968 0.0"/>
+</joint>
+
+<joint name="right_wheel_joint" type="continuous">
+  <origin xyz="-0.010756 -0.134446 0.062625" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="right_wheel_link_1"/>
+  <axis xyz="0.00034 -1.0 -0.0"/>
+</joint>
+
+<joint name="camera_mount_joint" type="revolute">
+  <origin xyz="0.001158 -0.011992 0.863809" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="camera_mount_link_1"/>
+  <axis xyz="-5.5e-05 0.003611 0.999993"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="vision_mount_joint" type="revolute">
+  <origin xyz="0.046998 0.031837 0.038088" rpy="0 0 0"/>
+  <parent link="camera_mount_link_1"/>
+  <child link="vision_module_link_1"/>
+  <axis xyz="1.1e-05 0.999993 -0.003611"/>
+  <limit upper="1.570796" lower="-1.570796" effort="100" velocity="100"/>
+</joint>
+
+<joint name="realsense_joint" type="fixed">
+  <origin xyz="0.025437 -0.024846 0.048271" rpy="0 0 0"/>
+  <parent link="vision_module_link_1"/>
+  <child link="realsense_link"/>
+</joint>
+
+<joint name="castor2_wheel_joint\" type="continuous">
+  <origin xyz="0.014019 0.006948 -0.020931" rpy="0 0 0"/>
+  <parent link="castor2_link_1"/>
+  <child link="castor2_wheel_link_1"/>
+  <axis xyz="-0.003747 -0.999993 0.0"/>
+</joint>
+
+<joint name="castor2_joint" type="continuous">
+  <origin xyz="-0.181264 -0.178803 0.037117" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="castor2_link_1"/>
+  <axis xyz="-0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="castor1_wheel_joint" type="continuous">
+  <origin xyz="-0.01395 -0.00678 -0.021147" rpy="0 0 0"/>
+  <parent link="castor1_link_1"/>
+  <child link="castor1_wheel_link_1"/>
+  <axis xyz="0.015812 0.999875 0.0"/>
+</joint>
+
+<joint name="castor1_joint" type="continuous">
+  <origin xyz="0.158401 -0.184256 0.037117" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="castor1_link_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="castor4_wheel_joint" type="continuous">
+  <origin xyz="-0.013907 0.007052 -0.02142" rpy="0 0 0"/>
+  <parent link="castor4_link_1"/>
+  <child link="castor4_wheel_link_1"/>
+  <axis xyz="-0.003747 -0.999993 -0.0"/>
+</joint>
+
+<joint name="castor4_joint" type="continuous">
+  <origin xyz="-0.17717 0.183789 0.037117" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="castor4_link_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+<joint name="castor3_wheel_joint" type="continuous">
+  <origin xyz="-0.013931 0.007051 -0.021233" rpy="0 0 0"/>
+  <parent link="castor3_link_1"/>
+  <child link="castor3_wheel_link_1"/>
+  <axis xyz="-0.003747 -0.999993 -0.0"/>
+</joint>
+
+<joint name="castor_joint" type="continuous">
+  <origin xyz="0.160147 0.178597 0.037117" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="castor3_link_1"/>
+  <axis xyz="-0.0 0.0 -1.0"/>
+</joint>
+
+</robot>

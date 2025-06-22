@@ -1,0 +1,9 @@
+<library path="hardware_controller">
+  <class name="hardware_controller/HardwareController"
+         type="hardware_controller::HardwareController"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+       Two-wheel hardware interface for serial communication with ESP32.
+    </description>
+  </class>
+</library>

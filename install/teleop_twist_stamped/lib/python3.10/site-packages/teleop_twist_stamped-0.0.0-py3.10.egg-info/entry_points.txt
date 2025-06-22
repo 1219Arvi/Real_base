@@ -1,0 +1,3 @@
+[console_scripts]
+teleop_twist_stamped_keyboard = teleop_twist_stamped.teleop_twist_stamped_keyboard:main
+
