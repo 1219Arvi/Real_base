@@ -30,7 +30,8 @@ namespace hardware_controller
   {
   public:
     CallbackReturn on_init(const hardware_interface::HardwareInfo &info) override
-    {
+    { 
+      info_ = info;
       if (SystemInterface::on_init(info) != CallbackReturn::SUCCESS)
         return CallbackReturn::ERROR;
 
@@ -41,7 +42,12 @@ namespace hardware_controller
       positions_.resize(num_wheels_, 0.0);
       velocities_.resize(num_wheels_, 0.0);
       commands_.resize(num_wheels_, 0.0);
-      directions_ = {1, 1}; // L, R signs
+      directions_ = {1, 1}; 
+
+      for (size_t i = 0; i < info_.joints.size(); ++i)
+      {
+        RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Joint[%ld] = %s", i, info_.joints[i].name.c_str());
+      }
 
       return CallbackReturn::SUCCESS;
     }
@@ -100,14 +106,24 @@ namespace hardware_controller
       return CallbackReturn::SUCCESS;
     }
 
-    CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override
+    // CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override
+    // {
+    //   if (fd_ >= 0)
+    //   {
+    //     close(fd_);
+    //   }
+    //   return CallbackReturn::SUCCESS;
+    // }
+    CallbackReturn on_deactivate(const rclcpp_lifecycle::State &)
     {
-      if (fd_ >= 0)
-      {
-        close(fd_);
-      }
-      return CallbackReturn::SUCCESS;
+      RCLCPP_INFO(rclcpp::get_logger("MyHardware"), "Deactivating... waiting for 60 seconds before releasing interfaces");
+
+      std::this_thread::sleep_for(std::chrono::seconds(60));  // Delay shutdown
+
+      RCLCPP_INFO(rclcpp::get_logger("MyHardware"), "Continuing shutdown after delay");
+      return hardware_interface::CallbackReturn::SUCCESS;
     }
+
 
     std::vector<hardware_interface::StateInterface> export_state_interfaces() override
     {
@@ -116,6 +132,16 @@ namespace hardware_controller
       {
         states.emplace_back(info_.joints[i].name, "position", &positions_[i]);
         states.emplace_back(info_.joints[i].name, "velocity", &velocities_[i]);
+        std::cout << info_.joints[i].name << "\n";
+      }
+      for (const auto &state : states)
+      {
+        std::cout << "[STATE] Exported: " << state.get_name() << "____" << state.get_interface_name() << std::endl;
+      }
+      std::cout << "Joint names in info_.joints:\n";
+      for (const auto& joint : info_.joints)
+      {
+        std::cout << joint.name << "\n";
       }
       return states;
     }
@@ -127,6 +153,12 @@ namespace hardware_controller
       {
         std::cout << info_.joints[i].name << "\n";
         cmds.emplace_back(info_.joints[i].name, "velocity", &commands_[i]);
+      }
+      
+
+      for (const auto &cmd : cmds)
+      {
+        std::cout << "[COMMAND] Exported: " << cmd.get_name() << "____" << cmd.get_interface_name() << std::endl;
       }
       return cmds;
     }
@@ -215,6 +247,7 @@ namespace hardware_controller
       return return_type::OK;
     }
 
+    
   private:
     std::string port_;
     struct termios tty_;

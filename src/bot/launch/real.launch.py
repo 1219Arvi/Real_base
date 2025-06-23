@@ -9,6 +9,7 @@ from launch_ros.actions import Node
 from launch.actions import ExecuteProcess
 from launch.substitutions import Command
 from launch.actions import TimerAction
+from launch.event_handlers import OnProcessStart
 
 def generate_launch_description():
     package_name = 'bot' 
@@ -26,47 +27,55 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         parameters=[robot_description, {'use_sim_time': False}],
-        output='screen'
+        output='screen',
+        arguments=['--ros-args', '--log-level', 'debug']
+        
     )
     robot_description = Command(['ros2 param get --hide-type /robot_state_publisher robot_description'])
 
     controller_manager = Node(
         package='controller_manager',
         executable='ros2_control_node',
-        parameters=[{'robot_description': robot_description},
-                    controller_params_file]
+        parameters=[{'robot_description': robot_description},controller_params_file],
+        output='screen',
+        arguments=['--ros-args', '--log-level', 'debug']
+
     )
 
     delayed_controller_manager = TimerAction(period=3.0, actions=[controller_manager])
 
-    load_diff_drive_controller = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'diff_drive_base_controller'],
+    load_joint_state_broadcaster = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['joint_state_broadcaster'],
         output='screen'
     )
 
-    load_joint_state_broadcaster = ExecuteProcess(
-        cmd=['ros2', 'control', 'load_controller', '--set-state', 'active', 'joint_state_broadcaster'],
+    load_diff_drive_controller = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=['diff_drive_base_controller',],
         output='screen'
     )
 
-    on_spawn_exit = RegisterEventHandler(
-        OnProcessExit(
+    delayed_diff_drive_base_controller = RegisterEventHandler(
+        event_handler=OnProcessStart(
             target_action=controller_manager,
-            on_exit=[load_joint_state_broadcaster]
+            on_start=[load_diff_drive_controller],
         )
     )
 
-    on_joint_state_loaded = RegisterEventHandler(
-        OnProcessExit(
-            target_action=load_joint_state_broadcaster,
-            on_exit=[load_diff_drive_controller]
+    delayed_joint_state_broadcaster = RegisterEventHandler(
+        event_handler=OnProcessStart(
+            target_action=controller_manager,
+            on_start=[load_joint_state_broadcaster],
         )
     )
 
     return LaunchDescription([
         delayed_controller_manager,
         robot_state_publisher,
-        on_spawn_exit,
-        on_joint_state_loaded,
+        delayed_diff_drive_base_controller,
+        delayed_joint_state_broadcaster,
  
     ])
