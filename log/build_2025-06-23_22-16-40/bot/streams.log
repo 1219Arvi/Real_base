@@ -1,0 +1,40 @@
+[0.015s] Invoking command in '/home/arvi/base_ws/build/bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/bot -- -j16 -l16
+[0.191s] [ 14%] Built target example_effort
+[0.191s] [ 28%] Built target example_velocity
+[0.192s] [ 42%] Built target example_position
+[0.192s] [ 57%] Built target example_diff_drive
+[0.192s] [ 71%] Built target example_gripper
+[0.192s] [ 85%] Built target example_tricycle_drive
+[0.192s] [100%] Built target example_position_pid
+[0.342s] Invoked command in '/home/arvi/base_ws/build/bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/bot -- -j16 -l16
+[0.343s] Invoking command in '/home/arvi/base_ws/build/bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/bot
+[0.351s] -- Install configuration: ""
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch/rviz.launch.py
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch/real.launch.py
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//config
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//config/diff_drive_controller.yaml
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//urdf
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_position
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_position_pid
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_velocity
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_effort
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_diff_drive
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_tricycle_drive
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_gripper
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/package_run_dependencies/bot
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/parent_prefix_path/bot
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.sh
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.dsv
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/path.sh
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/path.dsv
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.bash
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.sh
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.zsh
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.dsv
+[0.351s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/package.dsv
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/packages/bot
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig.cmake
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig-version.cmake
+[0.351s] -- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/package.xml
+[0.363s] Invoked command in '/home/arvi/base_ws/build/bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/bot

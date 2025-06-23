@@ -1,0 +1,19 @@
+running egg_info
+writing ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/PKG-INFO
+writing dependency_links to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/dependency_links.txt
+writing entry points to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/entry_points.txt
+writing requirements to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/requires.txt
+writing top-level names to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/top_level.txt
+reading manifest file '../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/SOURCES.txt'
+writing manifest file '../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info to /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped-0.0.0-py3.10.egg-info
+running install_scripts
+Installing teleop_twist_stamped_keyboard script to /home/arvi/base_ws/install/teleop_twist_stamped/lib/teleop_twist_stamped
+writing list of installed files to '/home/arvi/base_ws/build/teleop_twist_stamped/install.log'

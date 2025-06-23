@@ -1,0 +1,36 @@
+[ 14%] Built target example_effort
+[ 28%] Built target example_velocity
+[ 42%] Built target example_position
+[ 57%] Built target example_diff_drive
+[ 71%] Built target example_gripper
+[ 85%] Built target example_tricycle_drive
+[100%] Built target example_position_pid
+-- Install configuration: ""
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch/rviz.launch.py
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//launch/real.launch.py
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//config
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//config/diff_drive_controller.yaml
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot//urdf
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_position
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_position_pid
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_velocity
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_effort
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_diff_drive
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_tricycle_drive
+-- Up-to-date: /home/arvi/base_ws/install/bot/lib/bot/example_gripper
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/package_run_dependencies/bot
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/parent_prefix_path/bot
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.sh
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/path.sh
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/environment/path.dsv
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.bash
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.sh
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.zsh
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/local_setup.dsv
+-- Installing: /home/arvi/base_ws/install/bot/share/bot/package.dsv
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/packages/bot
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig.cmake
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig-version.cmake
+-- Up-to-date: /home/arvi/base_ws/install/bot/share/bot/package.xml

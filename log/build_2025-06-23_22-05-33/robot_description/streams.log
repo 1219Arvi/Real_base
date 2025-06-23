@@ -1,0 +1,59 @@
+[0.594s] Invoking command in '/home/arvi/base_ws/src/robot_description': PYTHONPATH=/home/arvi/base_ws/build/robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_description build --build-base /home/arvi/base_ws/build/robot_description/build install --record /home/arvi/base_ws/build/robot_description/install.log --install-scripts $base/lib/robot_description --single-version-externally-managed install_data
+[0.764s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[0.764s]   warnings.warn(
+[0.771s] running egg_info
+[0.772s] creating ../../build/robot_description/robot_description.egg-info
+[0.772s] writing ../../build/robot_description/robot_description.egg-info/PKG-INFO
+[0.772s] writing dependency_links to ../../build/robot_description/robot_description.egg-info/dependency_links.txt
+[0.772s] writing entry points to ../../build/robot_description/robot_description.egg-info/entry_points.txt
+[0.772s] writing requirements to ../../build/robot_description/robot_description.egg-info/requires.txt
+[0.772s] writing top-level names to ../../build/robot_description/robot_description.egg-info/top_level.txt
+[0.772s] writing manifest file '../../build/robot_description/robot_description.egg-info/SOURCES.txt'
+[0.774s] reading manifest file '../../build/robot_description/robot_description.egg-info/SOURCES.txt'
+[0.774s] writing manifest file '../../build/robot_description/robot_description.egg-info/SOURCES.txt'
+[0.774s] running build
+[0.775s] running build_py
+[0.775s] creating /home/arvi/base_ws/build/robot_description/build
+[0.775s] creating /home/arvi/base_ws/build/robot_description/build/lib
+[0.775s] creating /home/arvi/base_ws/build/robot_description/build/lib/robot_description
+[0.775s] copying robot_description/__init__.py -> /home/arvi/base_ws/build/robot_description/build/lib/robot_description
+[0.775s] running install
+[0.775s] running install_lib
+[0.775s] creating /home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description
+[0.776s] copying /home/arvi/base_ws/build/robot_description/build/lib/robot_description/__init__.py -> /home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description
+[0.776s] byte-compiling /home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description/__init__.py to __init__.cpython-310.pyc
+[0.776s] running install_data
+[0.776s] creating /home/arvi/base_ws/install/robot_description/share/ament_index
+[0.776s] creating /home/arvi/base_ws/install/robot_description/share/ament_index/resource_index
+[0.776s] creating /home/arvi/base_ws/install/robot_description/share/ament_index/resource_index/packages
+[0.776s] copying resource/robot_description -> /home/arvi/base_ws/install/robot_description/share/ament_index/resource_index/packages
+[0.777s] copying package.xml -> /home/arvi/base_ws/install/robot_description/share/robot_description
+[0.777s] creating /home/arvi/base_ws/install/robot_description/share/robot_description/launch
+[0.777s] copying launch/display.launch.py -> /home/arvi/base_ws/install/robot_description/share/robot_description/launch
+[0.777s] copying launch/gazebo.launch.py -> /home/arvi/base_ws/install/robot_description/share/robot_description/launch
+[0.777s] creating /home/arvi/base_ws/install/robot_description/share/robot_description/urdf
+[0.777s] copying urdf/robot.gazebo -> /home/arvi/base_ws/install/robot_description/share/robot_description/urdf
+[0.777s] copying urdf/materials.xacro -> /home/arvi/base_ws/install/robot_description/share/robot_description/urdf
+[0.777s] copying urdf/robot.trans -> /home/arvi/base_ws/install/robot_description/share/robot_description/urdf
+[0.777s] copying urdf/robot.xacro -> /home/arvi/base_ws/install/robot_description/share/robot_description/urdf
+[0.777s] creating /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.777s] copying meshes/vision_module_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.778s] copying meshes/right_wheel_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.778s] copying meshes/castor4_wheel_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.779s] copying meshes/castor1_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.781s] copying meshes/castor2_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.782s] copying meshes/castor3_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.783s] copying meshes/realsense_link.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.791s] copying meshes/castor1_wheel_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.792s] copying meshes/castor4_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.794s] copying meshes/castor2_wheel_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.795s] copying meshes/castor3_wheel_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.796s] copying meshes/base_link.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.825s] copying meshes/camera_mount_link_1.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.827s] copying meshes/left_wheel_link_2.stl -> /home/arvi/base_ws/install/robot_description/share/robot_description/meshes
+[0.827s] creating /home/arvi/base_ws/install/robot_description/share/robot_description/config
+[0.828s] running install_egg_info
+[0.832s] Copying ../../build/robot_description/robot_description.egg-info to /home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description-0.0.0-py3.10.egg-info
+[0.834s] running install_scripts
+[0.851s] writing list of installed files to '/home/arvi/base_ws/build/robot_description/install.log'
+[0.873s] Invoked command in '/home/arvi/base_ws/src/robot_description' returned '0': PYTHONPATH=/home/arvi/base_ws/build/robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_description build --build-base /home/arvi/base_ws/build/robot_description/build install --record /home/arvi/base_ws/build/robot_description/install.log --install-scripts $base/lib/robot_description --single-version-externally-managed install_data

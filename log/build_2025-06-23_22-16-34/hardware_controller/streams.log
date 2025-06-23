@@ -1,0 +1,47 @@
+[0.020s] Invoking command in '/home/arvi/base_ws/build/hardware_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/hardware_controller -- -j16 -l16
+[0.212s] [35m[1mConsolidate compiler generated dependencies of target hardware_controller[0m
+[0.212s] [ 50%] [32mBuilding CXX object CMakeFiles/hardware_controller.dir/src/hardware_controller.cpp.o[0m
+[2.326s] [100%] [32m[1mLinking CXX shared library libhardware_controller.so[0m
+[2.462s] [100%] Built target hardware_controller
+[2.471s] Invoked command in '/home/arvi/base_ws/build/hardware_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/hardware_controller -- -j16 -l16
+[2.473s] Invoking command in '/home/arvi/base_ws/build/hardware_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/hardware_controller
+[2.479s] -- Install configuration: ""
+[2.479s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/hardware_plugin.xml
+[2.479s] -- Installing: /home/arvi/base_ws/install/hardware_controller/lib/libhardware_controller.so
+[2.480s] -- Set runtime path of "/home/arvi/base_ws/install/hardware_controller/lib/libhardware_controller.so" to ""
+[2.480s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include
+[2.480s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial
+[2.480s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial/v8stdint.h
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial/serial.h
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial/impl
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial/impl/win.h
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/serial/impl/unix.h
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/hardware_controller
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/include/hardware_controller/hardware_controller.hpp
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/hardware_plugin.xml
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller//launch
+[2.481s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller//launch/launch.py
+[2.482s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller//config
+[2.482s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller//config/hardware.yaml
+[2.482s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/library_path.sh
+[2.482s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/library_path.dsv
+[2.482s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/ament_index/resource_index/package_run_dependencies/hardware_controller
+[2.483s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/ament_index/resource_index/parent_prefix_path/hardware_controller
+[2.483s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/ament_prefix_path.sh
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/ament_prefix_path.dsv
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/path.sh
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/environment/path.dsv
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/local_setup.bash
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/local_setup.sh
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/local_setup.zsh
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/local_setup.dsv
+[2.484s] -- Installing: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/package.dsv
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/ament_index/resource_index/packages/hardware_controller
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/ament_index/resource_index/hardware_interface__pluginlib__plugin/hardware_controller
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/cmake/ament_cmake_export_include_directories-extras.cmake
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/cmake/ament_cmake_export_libraries-extras.cmake
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/cmake/ament_cmake_export_dependencies-extras.cmake
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/cmake/hardware_controllerConfig.cmake
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/cmake/hardware_controllerConfig-version.cmake
+[2.484s] -- Up-to-date: /home/arvi/base_ws/install/hardware_controller/share/hardware_controller/package.xml
+[2.484s] Invoked command in '/home/arvi/base_ws/build/hardware_controller' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/hardware_controller

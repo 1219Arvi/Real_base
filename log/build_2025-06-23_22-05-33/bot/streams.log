@@ -1,0 +1,112 @@
+[0.013s] Invoking command in '/home/arvi/base_ws/build/bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake /home/arvi/base_ws/src/bot -DCMAKE_INSTALL_PREFIX=/home/arvi/base_ws/install/bot
+[0.167s] -- The C compiler identification is GNU 11.4.0
+[0.169s] -- The CXX compiler identification is GNU 11.4.0
+[0.177s] -- Detecting C compiler ABI info
+[0.243s] -- Detecting C compiler ABI info - done
+[0.251s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.251s] -- Detecting C compile features
+[0.251s] -- Detecting C compile features - done
+[0.254s] -- Detecting CXX compiler ABI info
+[0.318s] -- Detecting CXX compiler ABI info - done
+[0.324s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.324s] -- Detecting CXX compile features
+[0.324s] -- Detecting CXX compile features - done
+[0.333s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.471s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.580s] -- Found control_msgs: 4.8.0 (/opt/ros/humble/share/control_msgs/cmake)
+[0.623s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.628s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.637s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.652s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.668s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.798s] -- Found rclcpp: 16.0.12 (/opt/ros/humble/share/rclcpp/cmake)
+[0.876s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.880s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.971s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.992s] -- Found FastRTPS: /opt/ros/humble/include  
+[1.033s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.044s] -- Looking for pthread.h
+[1.116s] -- Looking for pthread.h - found
+[1.116s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[1.179s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[1.180s] -- Found Threads: TRUE  
+[1.206s] -- Found rclcpp_action: 16.0.12 (/opt/ros/humble/share/rclcpp_action/cmake)
+[1.219s] -- Found ament_cmake_gtest: 1.3.11 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[1.221s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.282s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.283s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.284s] -- Configured cppcheck include dirs: 
+[1.284s] -- Configured cppcheck exclude dirs and/or files: 
+[1.285s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.285s] -- Configured cpplint exclude dirs and/or files: 
+[1.285s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.286s] -- Added test 'lint_cmake' to check CMake code style
+[1.286s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.287s] -- Added test 'uncrustify' to check C / C++ code style
+[1.288s] -- Configured uncrustify additional arguments: 
+[1.288s] -- Added test 'xmllint' to check XML markup files
+[1.289s] -- Configuring done
+[1.305s] -- Generating done
+[1.311s] -- Build files have been written to: /home/arvi/base_ws/build/bot
+[1.318s] Invoked command in '/home/arvi/base_ws/build/bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake /home/arvi/base_ws/src/bot -DCMAKE_INSTALL_PREFIX=/home/arvi/base_ws/install/bot
+[1.319s] Invoking command in '/home/arvi/base_ws/build/bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/bot -- -j16 -l16
+[1.369s] [  7%] [32mBuilding CXX object CMakeFiles/example_diff_drive.dir/examples/example_diff_drive.cpp.o[0m
+[1.369s] [ 14%] [32mBuilding CXX object CMakeFiles/example_tricycle_drive.dir/examples/example_tricycle_drive.cpp.o[0m
+[1.373s] [ 21%] [32mBuilding CXX object CMakeFiles/example_velocity.dir/examples/example_velocity.cpp.o[0m
+[1.374s] [ 35%] [32mBuilding CXX object CMakeFiles/example_position.dir/examples/example_position.cpp.o[0m
+[1.374s] [ 35%] [32mBuilding CXX object CMakeFiles/example_gripper.dir/examples/example_gripper.cpp.o[0m
+[1.377s] [ 50%] [32mBuilding CXX object CMakeFiles/example_position_pid.dir/examples/example_position_pid.cpp.o[0m
+[1.377s] [ 50%] [32mBuilding CXX object CMakeFiles/example_effort.dir/examples/example_effort.cpp.o[0m
+[5.762s] [ 57%] [32m[1mLinking CXX executable example_tricycle_drive[0m
+[5.938s] [ 64%] [32m[1mLinking CXX executable example_effort[0m
+[6.052s] [ 71%] [32m[1mLinking CXX executable example_gripper[0m
+[6.096s] [ 71%] Built target example_tricycle_drive
+[6.168s] [ 71%] Built target example_effort
+[6.281s] [ 71%] Built target example_gripper
+[6.503s] [ 78%] [32m[1mLinking CXX executable example_position[0m
+[6.694s] [ 78%] Built target example_position
+[6.889s] [ 85%] [32m[1mLinking CXX executable example_velocity[0m
+[7.031s] [ 92%] [32m[1mLinking CXX executable example_position_pid[0m
+[7.043s] [ 92%] Built target example_velocity
+[7.158s] [ 92%] Built target example_position_pid
+[7.162s] [100%] [32m[1mLinking CXX executable example_diff_drive[0m
+[7.273s] [100%] Built target example_diff_drive
+[7.281s] Invoked command in '/home/arvi/base_ws/build/bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --build /home/arvi/base_ws/build/bot -- -j16 -l16
+[7.282s] Invoking command in '/home/arvi/base_ws/build/bot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/bot
+[7.290s] -- Install configuration: ""
+[7.290s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//launch
+[7.290s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//launch/rviz.launch.py
+[7.290s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//launch/real.launch.py
+[7.290s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//config
+[7.290s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//config/diff_drive_controller.yaml
+[7.291s] -- Installing: /home/arvi/base_ws/install/bot/share/bot//urdf
+[7.291s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_position
+[7.291s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_position" to ""
+[7.291s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_position_pid
+[7.292s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_position_pid" to ""
+[7.292s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_velocity
+[7.292s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_velocity" to ""
+[7.292s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_effort
+[7.293s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_effort" to ""
+[7.293s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_diff_drive
+[7.293s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_diff_drive" to ""
+[7.293s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_tricycle_drive
+[7.294s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_tricycle_drive" to ""
+[7.294s] -- Installing: /home/arvi/base_ws/install/bot/lib/bot/example_gripper
+[7.295s] -- Set runtime path of "/home/arvi/base_ws/install/bot/lib/bot/example_gripper" to ""
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/package_run_dependencies/bot
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/parent_prefix_path/bot
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.sh
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/environment/ament_prefix_path.dsv
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/environment/path.sh
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/environment/path.dsv
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/local_setup.bash
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/local_setup.sh
+[7.295s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/local_setup.zsh
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/local_setup.dsv
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/package.dsv
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/ament_index/resource_index/packages/bot
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig.cmake
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/cmake/botConfig-version.cmake
+[7.296s] -- Installing: /home/arvi/base_ws/install/bot/share/bot/package.xml
+[7.298s] Invoked command in '/home/arvi/base_ws/build/bot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/arvi/base_ws/install/teleop_twist_stamped:/home/arvi/base_ws/install/robot_description:/opt/ros/humble /usr/bin/cmake --install /home/arvi/base_ws/build/bot

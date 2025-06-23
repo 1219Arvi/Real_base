@@ -30,8 +30,7 @@ namespace hardware_controller
   {
   public:
     CallbackReturn on_init(const hardware_interface::HardwareInfo &info) override
-    { 
-      info_ = info;
+    {
       if (SystemInterface::on_init(info) != CallbackReturn::SUCCESS)
         return CallbackReturn::ERROR;
 
@@ -42,12 +41,7 @@ namespace hardware_controller
       positions_.resize(num_wheels_, 0.0);
       velocities_.resize(num_wheels_, 0.0);
       commands_.resize(num_wheels_, 0.0);
-      directions_ = {1, 1}; 
-
-      for (size_t i = 0; i < info_.joints.size(); ++i)
-      {
-        RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Joint[%ld] = %s", i, info_.joints[i].name.c_str());
-      }
+      directions_ = {1, 1}; // L, R signs
 
       return CallbackReturn::SUCCESS;
     }
@@ -106,24 +100,14 @@ namespace hardware_controller
       return CallbackReturn::SUCCESS;
     }
 
-    // CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override
-    // {
-    //   if (fd_ >= 0)
-    //   {
-    //     close(fd_);
-    //   }
-    //   return CallbackReturn::SUCCESS;
-    // }
-    CallbackReturn on_deactivate(const rclcpp_lifecycle::State &)
+    CallbackReturn on_deactivate(const rclcpp_lifecycle::State &) override
     {
-      RCLCPP_INFO(rclcpp::get_logger("MyHardware"), "Deactivating... waiting for 60 seconds before releasing interfaces");
-
-      std::this_thread::sleep_for(std::chrono::seconds(60));  // Delay shutdown
-
-      RCLCPP_INFO(rclcpp::get_logger("MyHardware"), "Continuing shutdown after delay");
-      return hardware_interface::CallbackReturn::SUCCESS;
+      if (fd_ >= 0)
+      {
+        close(fd_);
+      }
+      return CallbackReturn::SUCCESS;
     }
-
 
     std::vector<hardware_interface::StateInterface> export_state_interfaces() override
     {
@@ -132,16 +116,6 @@ namespace hardware_controller
       {
         states.emplace_back(info_.joints[i].name, "position", &positions_[i]);
         states.emplace_back(info_.joints[i].name, "velocity", &velocities_[i]);
-        std::cout << info_.joints[i].name << "\n";
-      }
-      for (const auto &state : states)
-      {
-        std::cout << "[STATE] Exported: " << state.get_name() << "____" << state.get_interface_name() << std::endl;
-      }
-      std::cout << "Joint names in info_.joints:\n";
-      for (const auto& joint : info_.joints)
-      {
-        std::cout << joint.name << "\n";
       }
       return states;
     }
@@ -149,105 +123,121 @@ namespace hardware_controller
     std::vector<hardware_interface::CommandInterface> export_command_interfaces() override
     {
       std::vector<hardware_interface::CommandInterface> cmds;
+
       for (size_t i = 0; i < num_wheels_; ++i)
       {
-        std::cout << info_.joints[i].name << "\n";
+        // Optional: log joint name for debug
+        RCLCPP_INFO(rclcpp::get_logger("HardwareController"),
+                    "Exporting command interface for joint: %s", info_.joints[i].name.c_str());
+
         cmds.emplace_back(info_.joints[i].name, "velocity", &commands_[i]);
       }
-      
 
-      for (const auto &cmd : cmds)
-      {
-        std::cout << "[COMMAND] Exported: " << cmd.get_name() << "____" << cmd.get_interface_name() << std::endl;
-      }
       return cmds;
     }
 
+
     hardware_interface::return_type read(const rclcpp::Time &, const rclcpp::Duration &) override
     {
-      const uint8_t START_BYTE = 0xCC;
-      const uint8_t END_BYTE = 0xDD;
-
-      WheelInterface feedback;
-      uint8_t buffer[sizeof(WheelInterface) + 2];
-      if (::read(fd_, buffer, sizeof(buffer)) != sizeof(buffer))
-        return return_type::ERROR;
-
-      if (buffer[0] != 0xCC || buffer[sizeof(buffer) - 1] != 0xDD)
-        return return_type::OK;
-
-      size_t total_bytes_read = 0;
-      ssize_t bytes_read = 0;  // ✅ Declare outside the loop
-
-      while (total_bytes_read < sizeof(buffer)) {
-        bytes_read = ::read(fd_, buffer + total_bytes_read, sizeof(buffer) - total_bytes_read);
-        if (bytes_read < 0) {
-          RCLCPP_ERROR(rclcpp::get_logger("HardwareController"), "Error reading from serial port: %s", strerror(errno));
-          return return_type::ERROR;
+        const uint8_t START_BYTE = 0xCC;
+        const uint8_t END_BYTE = 0xDD;
+        
+        // Check if data is available (non-blocking)
+        int bytes_available;
+        if (ioctl(fd_, FIONREAD, &bytes_available) < 0) {
+            RCLCPP_ERROR(rclcpp::get_logger("HardwareController"), "Failed to check available bytes");
+            return return_type::ERROR;
         }
-        total_bytes_read += bytes_read;
-      }
-
-      tcflush(fd_, TCIFLUSH); // Flush after reading is complete
-
-
-      if (bytes_read < 0)
-        RCLCPP_ERROR(rclcpp::get_logger("HardwareController"), "Error reading from serial port: %s", strerror(errno));
-      return return_type::ERROR;
-
-      total_bytes_read += bytes_read;
-
-      if (buffer[0] == START_BYTE && buffer[sizeof(buffer) - 1] == END_BYTE)
-      {
+        
+        if (bytes_available < sizeof(WheelInterface) + 2) {
+            // Not enough data available, return OK and keep previous values
+            return return_type::OK;
+        }
+        
+        WheelInterface feedback;
+        uint8_t buffer[sizeof(WheelInterface) + 2];
+        
+        ssize_t bytes_read = ::read(fd_, buffer, sizeof(buffer));
+        if (bytes_read != sizeof(buffer)) {
+            if (bytes_read < 0) {
+                RCLCPP_ERROR(rclcpp::get_logger("HardwareController"), "Read error: %s", strerror(errno));
+                return return_type::ERROR;
+            }
+            // Partial read - flush and continue
+            tcflush(fd_, TCIFLUSH);
+            return return_type::OK;
+        }
+        
+        // Validate packet
+        if (buffer[0] != START_BYTE || buffer[sizeof(buffer) - 1] != END_BYTE) {
+            RCLCPP_WARN(rclcpp::get_logger("HardwareController"), "Invalid packet markers");
+            tcflush(fd_, TCIFLUSH);
+            return return_type::OK;
+        }
+        
+        // Process valid data
         std::memcpy(&feedback, buffer + 1, sizeof(WheelInterface));
-        for (size_t i = 0; i < num_wheels_; ++i)
-        {
-          positions_[i] = feedback.positions[i] * M_PI / 180.0 * directions_[i];
-          velocities_[i] = feedback.velocities[i] * M_PI / 180.0 * directions_[i];
+        for (size_t i = 0; i < num_wheels_; ++i) {
+            positions_[i] = feedback.positions[i] * M_PI / 180.0 * directions_[i];
+            velocities_[i] = feedback.velocities[i] * M_PI / 180.0 * directions_[i];
         }
-
-        RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Received positions: %f %f", positions_[0], positions_[1]);
-        RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Received velocities: %f %f", velocities_[0], velocities_[1]);
-      }
-      else
-      {
-        RCLCPP_WARN(rclcpp::get_logger("HardwareController"), "Invalid feedback packet format");
-      }
-      RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Received positions: %f %f", positions_[0], positions_[1]);
-
-      std::this_thread::sleep_for(std::chrono::milliseconds(20));
-
-      return return_type::OK;
+        
+        return return_type::OK;
     }
+
 
     hardware_interface::return_type write(const rclcpp::Time &, const rclcpp::Duration &) override
     {
       const uint8_t START_BYTE = 0xAA;
       const uint8_t END_BYTE = 0xBB;
+      const double SCALE_TO_PWM = 255.0 / 2; //MAX_WHEEL_VELOCITY_RAD_PER_SEC;  
 
-      WheelInterface command;
+      RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Raw commands: %f %f", commands_[0], commands_[1]);
+
+
+      struct PWMInterface
+      {
+        int16_t pwm_values[2];  // signed 16-bit ints for left and right wheel
+      };
+
+      PWMInterface pwm_command;
+
       for (size_t i = 0; i < num_wheels_; ++i)
-        command.velocities[i] = commands_[i] * (180.0 / M_PI) * directions_[i];
+      {
+        double velocity_rad = commands_[i] * directions_[i];  // rad/s
+        int pwm = static_cast<int>(velocity_rad * SCALE_TO_PWM);
 
-      uint8_t buffer[sizeof(WheelInterface) + 2];
+        // Clamp to [-255, 255]
+        if (pwm > 255) pwm = 255;
+        if (pwm < -255) pwm = -255;
+
+        pwm_command.pwm_values[i] = static_cast<int16_t>(pwm);
+      }
+
+      // Compose buffer to send
+      uint8_t buffer[sizeof(PWMInterface) + 2];
       buffer[0] = START_BYTE;
-      std::memcpy(buffer + 1, &command, sizeof(WheelInterface));
+      std::memcpy(buffer + 1, &pwm_command, sizeof(PWMInterface));
       buffer[sizeof(buffer) - 1] = END_BYTE;
 
+      // Send over serial
       ssize_t written_bytes = ::write(fd_, buffer, sizeof(buffer));
-
       if (written_bytes != sizeof(buffer))
       {
-        RCLCPP_ERROR(rclcpp::get_logger("HardwareController"), "Failed to send command");
+        RCLCPP_ERROR(rclcpp::get_logger("HardwareController"),
+                    "Failed to send PWM command (expected %zu, wrote %zd)", sizeof(buffer), written_bytes);
         return return_type::ERROR;
       }
-      RCLCPP_INFO(rclcpp::get_logger("HardwareController"), "Sent target velocities: %f %f",
-                  command.velocities[0], command.velocities[1]);
+
+      RCLCPP_INFO(rclcpp::get_logger("HardwareController"),
+                  "Sent PWM values: L=%d, R=%d", pwm_command.pwm_values[0], pwm_command.pwm_values[1]);
 
       return return_type::OK;
     }
 
-    
+
+
+
   private:
     std::string port_;
     struct termios tty_;

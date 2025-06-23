@@ -1,0 +1,22 @@
+[0.766s] Invoking command in '/home/arvi/base_ws/src/robot_description': PYTHONPATH=/home/arvi/base_ws/build/robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_description build --build-base /home/arvi/base_ws/build/robot_description/build install --record /home/arvi/base_ws/build/robot_description/install.log --install-scripts $base/lib/robot_description --single-version-externally-managed install_data
+[0.938s] /usr/lib/python3/dist-packages/setuptools/dist.py:723: UserWarning: Usage of dash-separated 'script-dir' will not be supported in future versions. Please use the underscore name 'script_dir' instead
+[0.938s]   warnings.warn(
+[0.945s] running egg_info
+[0.945s] writing ../../build/robot_description/robot_description.egg-info/PKG-INFO
+[0.945s] writing dependency_links to ../../build/robot_description/robot_description.egg-info/dependency_links.txt
+[0.946s] writing entry points to ../../build/robot_description/robot_description.egg-info/entry_points.txt
+[0.946s] writing requirements to ../../build/robot_description/robot_description.egg-info/requires.txt
+[0.946s] writing top-level names to ../../build/robot_description/robot_description.egg-info/top_level.txt
+[0.947s] reading manifest file '../../build/robot_description/robot_description.egg-info/SOURCES.txt'
+[0.948s] writing manifest file '../../build/robot_description/robot_description.egg-info/SOURCES.txt'
+[0.949s] running build
+[0.949s] running build_py
+[0.949s] running install
+[0.949s] running install_lib
+[0.950s] running install_data
+[0.950s] running install_egg_info
+[0.952s] removing '/home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description-0.0.0-py3.10.egg-info' (and everything under it)
+[0.952s] Copying ../../build/robot_description/robot_description.egg-info to /home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages/robot_description-0.0.0-py3.10.egg-info
+[0.953s] running install_scripts
+[0.970s] writing list of installed files to '/home/arvi/base_ws/build/robot_description/install.log'
+[0.992s] Invoked command in '/home/arvi/base_ws/src/robot_description' returned '0': PYTHONPATH=/home/arvi/base_ws/build/robot_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/arvi/base_ws/install/robot_description/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/robot_description build --build-base /home/arvi/base_ws/build/robot_description/build install --record /home/arvi/base_ws/build/robot_description/install.log --install-scripts $base/lib/robot_description --single-version-externally-managed install_data

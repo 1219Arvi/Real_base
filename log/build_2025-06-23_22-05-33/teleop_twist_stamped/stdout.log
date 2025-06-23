@@ -1,0 +1,35 @@
+running egg_info
+creating ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info
+writing ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/PKG-INFO
+writing dependency_links to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/dependency_links.txt
+writing entry points to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/entry_points.txt
+writing requirements to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/requires.txt
+writing top-level names to ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/top_level.txt
+writing manifest file '../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/SOURCES.txt'
+reading manifest file '../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/SOURCES.txt'
+writing manifest file '../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arvi/base_ws/build/teleop_twist_stamped/build
+creating /home/arvi/base_ws/build/teleop_twist_stamped/build/lib
+creating /home/arvi/base_ws/build/teleop_twist_stamped/build/lib/teleop_twist_stamped
+copying teleop_twist_stamped/__init__.py -> /home/arvi/base_ws/build/teleop_twist_stamped/build/lib/teleop_twist_stamped
+copying teleop_twist_stamped/teleop_twist_stamped_keyboard.py -> /home/arvi/base_ws/build/teleop_twist_stamped/build/lib/teleop_twist_stamped
+running install
+running install_lib
+creating /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped
+copying /home/arvi/base_ws/build/teleop_twist_stamped/build/lib/teleop_twist_stamped/__init__.py -> /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped
+copying /home/arvi/base_ws/build/teleop_twist_stamped/build/lib/teleop_twist_stamped/teleop_twist_stamped_keyboard.py -> /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped
+byte-compiling /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped/teleop_twist_stamped_keyboard.py to teleop_twist_stamped_keyboard.cpython-310.pyc
+running install_data
+creating /home/arvi/base_ws/install/teleop_twist_stamped/share/ament_index
+creating /home/arvi/base_ws/install/teleop_twist_stamped/share/ament_index/resource_index
+creating /home/arvi/base_ws/install/teleop_twist_stamped/share/ament_index/resource_index/packages
+copying resource/teleop_twist_stamped -> /home/arvi/base_ws/install/teleop_twist_stamped/share/ament_index/resource_index/packages
+copying package.xml -> /home/arvi/base_ws/install/teleop_twist_stamped/share/teleop_twist_stamped
+running install_egg_info
+Copying ../../build/teleop_twist_stamped/teleop_twist_stamped.egg-info to /home/arvi/base_ws/install/teleop_twist_stamped/lib/python3.10/site-packages/teleop_twist_stamped-0.0.0-py3.10.egg-info
+running install_scripts
+Installing teleop_twist_stamped_keyboard script to /home/arvi/base_ws/install/teleop_twist_stamped/lib/teleop_twist_stamped
+writing list of installed files to '/home/arvi/base_ws/build/teleop_twist_stamped/install.log'
